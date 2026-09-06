@@ -28,6 +28,7 @@ Target Services Exposed via Tunnel:
    * Set Password (complex alphanumeric string).
    * Set Service to ovpn.
    * Set Profile to Pool_OpenVPN.
+![MikroTik PPP Secret Setup](docs/img/vpn_1.png)
 
 2. Generate Endpoint Identity Certificate:
    * Navigate to System -> Certificates -> Add New.
@@ -45,6 +46,7 @@ Place the following bundle inside %USERPROFILE%\OpenVPN\config\<ProfileName>:
 * username.p12: Exported PKCS#12 cryptographic bundle.
 * auth.cfg: Two-line plain ANSI text file (PPP credentials).
 * keypass.cfg: Single-line plain ANSI text file (PKCS#12 passphrase).
+![Client Configuration Bundle Structure](docs/img/vpn_2.png)
 
 ## Automation & Service Recovery
 
