@@ -1,0 +1,25 @@
+# Cryptographic keys, certificates and bundles
+*.p12
+*.pfx
+*.key
+*.crt
+*.csr
+*.pem
+
+# Credentials and sensitive config files
+auth.cfg
+keypass.cfg
+*.secret
+*.env
+
+# Runtime logs and cache
+*.log
+*.tmp
+/log/
+
+# OS and IDE specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

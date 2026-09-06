@@ -1,0 +1,44 @@
+# =========================================================================
+# OpenVPN Client Configuration: Split-Tunnel Corporate Access
+# Gateway: Enterprise MikroTik RouterOS OVPN Server
+# =========================================================================
+
+client
+dev tun
+proto tcp
+
+nobind
+persist-key
+persist-tun
+
+# Documentation IP address (RFC 5737) - replace with your gateway host/IP
+remote ://example-corporate.com 8085
+
+# Performance tuning
+sndbuf 524288
+rcvbuf 524288
+tun-mtu 1500
+mssfix 1450
+
+# Cryptography and backward compatibility for RouterOS v6/v7
+auth SHA1
+data-ciphers AES-256-GCM:AES-128-GCM:AES-256-CBC
+data-ciphers-fallback AES-256-CBC
+
+# Authentication artifacts (populated dynamically)
+pkcs12 client.p12
+auth-user-pass auth.cfg
+askpass keypass.cfg
+
+verb 3
+
+# Internal corporate DNS servers
+dhcp-option DNS 10.10.1.10
+dhcp-option DNS 1.1.1.1
+dhcp-option DNS 8.8.8.8
+
+# Split-tunnel routes for internal resources
+route 10.10.1.10  255.255.255.255   # Primary Domain Controller / DNS
+route 10.10.1.20  255.255.255.255   # Mail Server
+route 10.10.1.30  255.255.255.255   # Corporate File Share (SMB NAS)
+route 10.10.1.50  255.255.255.255   # Enterprise Database
