@@ -80,3 +80,8 @@ Test-NetConnection -ComputerName 10.10.1.30 -Port 445
 | Wintun driver will not work | OpenVPNServiceInteractive Windows service is stopped or disabled. | Ensure service startup type is Automatic and restart the service. |
 | Connection reset, restarting [-1] | Mismatch in credentials, expired client certificate, or TLS version mismatch. | Re-sign PKCS#12 bundle against CA with 10-year validity; verify password and cipher list. |
 | CA not defined | PKCS#12 bundle missing Root CA chain in OpenVPN Connect v3. | Use OpenVPN Community Edition GUI or append inline ca blocks directly into the profile. |
+## Copyright and License
+
+Copyright (c) 2026 zazauzr. All rights reserved.
+
+This repository and all its contents (including documentation, scripts, and configuration files) are proprietary. Unauthorized copying, modification, distribution, or commercial use of any materials from this repository, via any medium, is strictly prohibited without the express prior written permission of the copyright holder.
